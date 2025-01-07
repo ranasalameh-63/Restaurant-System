@@ -36,7 +36,6 @@
             </div>
         </nav>
         <div class="main-heading">
-            <h3>Order Form</h3>
                 <p>
                  Pick your favorite flavor and let us craft a delicious experience for you!
                 </p>
@@ -47,14 +46,14 @@
                 <form action="">
                   <input class="main-input" type="text" id="userName" name="name" placeholder="Your Full Name" />
                   <input class="main-input" type="password" id="password" name="password" placeholder="Password" />
-                  <input class="main-input" type="date" id="Ddate" name="date" placeholder="Password" />
+                  <input class="main-input" type="date" id="Bdate" name="date" placeholder="Password" />
                   <input class="main-input" type="tel" id="phone" name="phone" placeholder="Phone Number" />
                   <h4>Select Your Gender</h4> <br>
-                  <label for="Female">Female</label>
-                  <input id = "female" type="radio">
-                  <br><br>
-                  <label for="Male">Male</label>
-                  <input id = "male" type="radio"> <br><br>                  
+                  <label>Gender :</label>
+                    <select id="userGender">
+                    <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+        </select><br><br>                  
             <h4>Choose your order</h4> <br>
             <label for="shawerma" >shawerma</label>
             <input id = "shawerma" type="checkbox">
@@ -82,6 +81,13 @@
               </div>
             </div>
           </div>
+          
+            <h2>Customer List</h2>
+            <div id="customersContainer">
+                <div id="card"></div>
+            </div>
+       
+    
         
         <footer class="footer">
             <div class="links">
