@@ -12,7 +12,7 @@ let button = document.getElementById('button').addEventListener('click',function
     if (document.getElementById('Zinger').checked) order.push('Zinger');
     if (document.getElementById('Burger').checked) order.push('Burger');
     
-
+///////////////////////
     let errorMessage = [];
 
     if (/\s/.test(userName)) {
