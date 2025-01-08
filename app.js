@@ -6,6 +6,7 @@ let button = document.getElementById('button').addEventListener('click',function
     let userPhone = document.getElementById('phone').value;
     let userGender = document.getElementById('userGender').value;
     let userEmail = document.getElementById('mail').value;
+    let image = `./profile.jpg`;
     let order =[];
     if (document.getElementById('shawerma').checked) order.push('shawerma');
     if (document.getElementById('Zinger').checked) order.push('Zinger');
@@ -36,18 +37,18 @@ let button = document.getElementById('button').addEventListener('click',function
     if (!/^\d{4}-\d{2}-\d{2}$/.test(userDate)) {
         alert( 'Birthday must be in the format YYYY-MM-DD.\n');
     }
-        if (errorMessage) {
-            alert("error in Registration");  
-        }
-         else {
-        alert('Registration successful!');
-    }
+    //     if (errorMessage) {
+    //         alert("error in Registration");  
+    //     }
+    //      else {
+    //     alert('Registration successful!');
+    // }
 
     let choice = document.getElementById('Sandwish').checked ? 'Sandwish' :
     document.getElementById('Combo').checked ? 'Combo' : 'None';
 
     
-    let x = new Customer(userName,userPassword,userDate,userGender,order,choice,userPhone);
+    let x = new Customer(userName,userPassword,userDate,userGender,order,choice,userPhone ,image);
 
    localStorage.setItem('orders',JSON.stringify(x)) ;
    let result =JSON.parse( localStorage.getItem('orders',x));
@@ -55,23 +56,26 @@ let button = document.getElementById('button').addEventListener('click',function
     let box = document.getElementById('customersContainer');
     let card = document.getElementById('card');
     
-    card.innerHTML = ` <p><strong>Name:</strong> ${result.Name}</p>
+    card.innerHTML = `<p><img src="${result.imgUrl}" alt="Profile Picture" style="width: 100px; border-radius: 50%; margin-bottom: 15px;"></p>
+    <p><strong>Name:</strong> ${result.Name}</p>
     <p><strong>Password:</strong> ${result.password}</p>
     <p><strong>Birth Date:</strong> ${result.birthDate}</p>
     <p><strong>Phone:</strong> ${result.phone}</p>
     <p><strong>Gender:</strong> ${result.gender}</p>
     <p><strong>Order:</strong> ${result.orderType}</p>
     <p><strong>Order Type:</strong> ${result.orderOption}</p>`; 
+ 
 });
 // Constructor for Customer object
-function Customer(fullName, password, birthDate, gender, orderType, orderOption, phone) {
+function Customer(fullName, password, birthDate, gender, orderType, orderOption, phone,imgUrl) {
     this.Name = fullName;
     this.password = password;
     this.birthDate = birthDate;
     this.gender = gender;
     this.orderType = orderType;
     this.orderOption = orderOption;
-    // this.imgUrl = imgUrl;
     this.phone = phone;
+    this.imgUrl = imgUrl;
+
 }
 

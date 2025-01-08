@@ -185,27 +185,34 @@ body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
-
-.card {
+#customersContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#card {
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px 0;
-    max-width: 400px;
+    margin: 20px ;
+    max-width: 500px;
+    width: 100%;
+    
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+#card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
-.card p {
+#card p {
     margin: 10px 0;
     font-size: 16px;
-   
+    line-height: 1.5;
+    color: #333;
 }
 
 .footer {
